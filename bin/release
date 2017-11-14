@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+
+cat <<EOF
+---
+config_vars:
+  Boost_INCLUDE_DIRS: $CACHE_DIR/include
+  Boost_LIBRARY_DIR: $CACHE_DIR/lib
+EOF
