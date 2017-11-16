@@ -10,6 +10,7 @@ URL_BOOST=https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0
 
 mkdir -p $CACHE_DIR
 cd $CACHE_DIR
+echo $CACHE_DIR
 if [ -e $CACHE_DIR/include/boost/version.hpp ]; then
   echo "Boost found in: $CACHE_DIR/include/boost/version.hpp"
 else
@@ -19,7 +20,7 @@ else
   tar xjf boost_1_62_0.tar.bz2
   rm -rf boost_1_62_0.tar.bz2
   cd boost_1_62_0
-  ./bootstrap.sh --with-python=python3.6.2
+  ./bootstrap.sh --with-python=/app/.heroku/python/bin/python
   echo "compiling library..."
   ./b2
   cd ..
