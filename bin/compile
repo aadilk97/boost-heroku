@@ -8,11 +8,10 @@ CACHE_DIR=$2
 
 URL_BOOST=https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.bz2
 
-$CACHE_DIR = /app/.apt/usr/lib/x86_64-linux-gnu/
-cd $CACHE_DIR
-echo $CACHE_DIR
-if [ -e $CACHE_DIR/include/boost/version.hpp ]; then
-  echo "Boost found in: $CACHE_DIR/include/boost/version.hpp"
+cd $BUILD_DIR
+echo $BUILD_DIR
+if [ -e $BUILD_DIR/include/boost/version.hpp ]; then
+  echo "Boost found in: $BUILD_DIR/include/boost/version.hpp"
 else
   echo "downloding boost..."
   wget $URL_BOOST
@@ -31,8 +30,8 @@ fi
 #export CMAKE_LIBRARY_PATH="$CACHE_DIR/lib:$CMAKE_LIBRARY_PATH"
 #export CMAKE_INCLUDE_PATH="$CACHE_DIR/include:$CMAKE_INCLUDE_PATH"
 #setenv "BOOST_ROOT" "$CACHE_DIR"
-export BOOST_INCLUDEDIR=$CACHE_DIR/include
-export BOOST_LIBRARYDIR=$CACHE_DIR/lib
+export BOOST_INCLUDEDIR=$BUILD_DIR/include
+export BOOST_LIBRARYDIR=$BUILD_DIR/lib
 
 echo "$BOOST_INCLUDEDIR"
 echo "$BOOST_LIBRARYDIR"
