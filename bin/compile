@@ -6,7 +6,7 @@ set -e
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-URL_BOOST=https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.bz2
+URL_BOOST= https://volafile.org/get/q4IF06rfqO6z/myboost.tar.bz2
 
 cd $BUILD_DIR
 if [ -e $BUILD_DIR/include/boost/version.hpp ]; then
