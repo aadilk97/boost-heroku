@@ -13,7 +13,7 @@ if [ -e $BUILD_DIR/include/boost/version.hpp ]; then
   echo "Boost found in: $BUILD_DIR/include/boost/version.hpp"
 else
   echo "downloding boost..."
-  wget $URL_BOOST
+  curl "https://transfer.sh/qp6np/myboost.tar.bz2" -o myboost.tar.bz2
   echo "extrating files..."
   tar xjf myboost.tar.bz2
   rm -rf mybost.tar.bz2
